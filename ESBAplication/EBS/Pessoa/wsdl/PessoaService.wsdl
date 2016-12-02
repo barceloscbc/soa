@@ -1,0 +1,86 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions name="PessoaService" targetNamespace="http://pucminas.br/sn/PessoaService/cleberigor"
+                  xmlns:tns="http://pucminas.br/sn/PessoaService/cleberigor" xmlns:inp1="http://pucminas.br/sn/Pessoa"
+                  xmlns:inp2="http://pucminas.br/mc/soa/cleberigor" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://pucminas.br/sn/Pessoa" schemaLocation="../xsd/ParametrosPessoa.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://pucminas.br/mc/soa/cleberigor"
+                  schemaLocation="../../../ModeloCanonico/MC/PucminasFault.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="buscaPessoaRequest">
+    <wsdl:part name="parameters" element="inp1:parametrosBuscaPessoa"/>
+  </wsdl:message>
+  <wsdl:message name="buscaPessoaResponse">
+    <wsdl:part name="parameters" element="inp1:resultadoBuscaPessoa"/>
+  </wsdl:message>
+  <wsdl:message name="pucminasFault">
+    <wsdl:part name="parameters" type="inp2:PucminasFault"/>
+  </wsdl:message>
+  <wsdl:message name="cadastraPessoaRequest">
+    <wsdl:part name="parameters" element="inp1:parametrosCadastraPessoa"/>
+  </wsdl:message>
+  <wsdl:message name="cadastraPessoaResponse">
+    <wsdl:part name="parameters" element="inp1:resultadoCadastraPessoa"/>
+  </wsdl:message>
+  <wsdl:message name="desastivaPessoaRequest">
+    <wsdl:part name="parameters" element="inp1:parametrosDesastivaPessoa"/>
+  </wsdl:message>
+  <wsdl:portType name="PessoaService">
+    <wsdl:operation name="buscaPessoa">
+      <wsdl:input message="tns:buscaPessoaRequest"/>
+      <wsdl:output message="tns:buscaPessoaResponse"/>
+      <wsdl:fault name="pucminasFault" message="tns:pucminasFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="cadastroPessoa">
+      <wsdl:input message="tns:cadastraPessoaRequest"/>
+      <wsdl:output message="tns:cadastraPessoaResponse"/>
+      <wsdl:fault message="tns:pucminasFault" name="pucminasFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="desastivaPessoa">
+      <wsdl:input message="tns:desastivaPessoaRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PessoaServiceSOAP" type="tns:PessoaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="buscaPessoa">
+      <soap:operation style="document" soapAction="buscaPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/PessoaService/cleberigor"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/PessoaService/cleberigor"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cadastroPessoa">
+      <soap:operation style="document" soapAction="cadastroPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/PessoaService/cleberigor"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/PessoaService/cleberigor"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="desastivaPessoa">
+      <soap:operation style="document" soapAction="http://pucminas.br/sn/PessoaService/cleberigor/desastivaPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PessoaService">
+    <wsdl:port name="PessoaServiceSOAP" binding="tns:PessoaServiceSOAP">
+      <soap:address location="http://pucminas.br/soa/pessoa"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

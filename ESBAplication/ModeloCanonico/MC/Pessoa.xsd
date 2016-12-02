@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/mc/soa/cleberigor"
+            targetNamespace="http://pucminas.br/mc/soa/cleberigor" elementFormDefault="qualified">
+  <xsd:complexType name="Pessoa">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:integer"/>
+      <xsd:element name="nome" type="xsd:string"/>
+      <xsd:element name="dataNascimento" type="xsd:date"/>
+      <xsd:element name="cpf" type="xsd:string"/>
+      <xsd:element name="telefone" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

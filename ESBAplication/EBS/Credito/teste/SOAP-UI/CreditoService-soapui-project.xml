@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="92d922cd-c868-4433-8a64-fca3e7ead9ce" activeEnvironment="Default" name="CreditoService" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="18966ac9-7be6-4b52-90d7-c2f1edd2ab7d" wsaVersion="NONE" name="CreditoServiceSOAP" type="wsdl" bindingName="{http://pucminas.br/sn/creditoservice/cleberigor}CreditoServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/Projetos/fontes/soa/ESBAplication/EBS/Credito/wsdl/CreditoService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Projetos/fontes/soa/ESBAplication/EBS/Credito/wsdl/CreditoService.wsdl"><con:part><con:url>file:/C:/Projetos/fontes/soa/ESBAplication/EBS/Credito/wsdl/CreditoService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CreditoService" targetNamespace="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:tns="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:inp1="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:inp2="http://pucminas.br/mc/soa/cleberigor" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://pucminas.br/sn/creditoservice/cleberigor" schemaLocation="../xsd/ParametrosCredito.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://pucminas.br/mc/soa/cleberigor" schemaLocation="../../../ModeloCanonico/MC/PucminasFault.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="verificaCreditoExternoRequest">
+    <wsdl:part name="parameters" element="tns:parametrosVerificaCreditoExterno"/>
+  </wsdl:message>
+  <wsdl:message name="verificaCreditoExternoResponse">
+    <wsdl:part name="parameters" element="tns:resultadoVerificaCreditoExterno"/>
+  </wsdl:message>
+  <wsdl:message name="pucminasFault">
+    <wsdl:part name="pucminasFault" type="inp2:PucminasFault"/>
+  </wsdl:message>
+  <wsdl:message name="verificaCreditoInternoRequest">
+    <wsdl:part name="parameters" element="tns:parametrosVerificaCreditoInterno"/>
+  </wsdl:message>
+  <wsdl:message name="verificaCreditoInternoResponse">
+    <wsdl:part name="parameters" element="tns:resultadoVerificaCreditoInterno"/>
+  </wsdl:message>
+  <wsdl:message name="verificaWhiteListRequest">
+    <wsdl:part name="parameters" element="tns:parametrosVerificaWhiteList"/>
+  </wsdl:message>
+  <wsdl:message name="verificaWhiteListResponse">
+    <wsdl:part name="parameters" element="tns:resultadoVerificaWhiteList"/>
+  </wsdl:message>
+  <wsdl:portType name="CreditoService">
+    <wsdl:operation name="verificaCreditoExterno">
+      <wsdl:input message="tns:verificaCreditoExternoRequest"/>
+      <wsdl:output message="tns:verificaCreditoExternoResponse"/>
+      <wsdl:fault name="pucminasFault" message="tns:pucminasFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="verificaCreditoInterno">
+      <wsdl:input message="tns:verificaCreditoInternoRequest"/>
+      <wsdl:output message="tns:verificaCreditoInternoResponse"/>
+      <wsdl:fault message="tns:pucminasFault" name="pucminasFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="verificaWhiteList">
+      <wsdl:input message="tns:verificaWhiteListRequest"/>
+      <wsdl:output message="tns:verificaWhiteListResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditoServiceSOAP" type="tns:CreditoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="verificaCreditoExterno">
+      <soap:operation style="document" soapAction="verificaCreditoExterno"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/creditoservice/cleberigor"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/creditoservice/cleberigor"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verificaCreditoInterno">
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verificaWhiteList">
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditoService">
+    <wsdl:port name="CreditoServiceSOAP" binding="tns:CreditoServiceSOAP">
+      <soap:address location="http://pucminas.br/soa/credito"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Projetos\fontes\soa\ESBAplication\EBS\Credito\xsd\ParametrosCredito.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://pucminas.br/sn/creditoservice/cleberigor" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cs="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:cim="http://pucminas.br/mc/soa/cleberigor">
+  <xsd:import schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd" namespace="http://pucminas.br/mc/soa/cleberigor"/>
+  <xsd:import schemaLocation="../../../ModeloCanonico/MC/Credito.xsd" namespace="http://pucminas.br/mc/soa/cleberigor"/>
+  <xsd:import schemaLocation="../../../ModeloCanonico/MC/MensagemRetorno.xsd" namespace="http://pucminas.br/mc/soa/cleberigor"/>
+  <xsd:element name="parametrosVerificaCreditoInterno">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="parametrosVerificaCreditoExterno">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="parametrosVerificaWhiteList">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoVerificaCreditoInterno">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="credito" type="cim:Credito"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoVerificaCreditoExterno">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="credito" type="cim:Credito"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoVerificaWhiteList">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="mensagemRetorno" type="cim:MensagemRetorno"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Projetos\fontes\soa\ESBAplication\ModeloCanonico\MC\Pessoa.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://pucminas.br/mc/soa/cleberigor" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/mc/soa/cleberigor">
+  <xsd:complexType name="Pessoa">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:integer"/>
+      <xsd:element name="nome" type="xsd:string"/>
+      <xsd:element name="dataNascimento" type="xsd:date"/>
+      <xsd:element name="cnpj" type="xsd:string"/>
+      <xsd:element name="telefone" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Projetos\fontes\soa\ESBAplication\ModeloCanonico\MC\Credito.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://pucminas.br/mc/soa/cleberigor" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/mc/soa/cleberigor">
+  <xsd:include schemaLocation="Pessoa.xsd"/>
+  <xsd:complexType name="Credito">
+    <xsd:sequence>
+      <xsd:element name="pessoa" type="ci:Pessoa"/>
+      <xsd:element name="indicaCreditoExterno" type="xsd:boolean"/>
+      <xsd:element name="indicaCreditoInterno" type="xsd:boolean"/>
+      <xsd:element name="indicaWhiteList" type="xsd:boolean"/>
+      <xsd:element name="situacao" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Projetos\fontes\soa\ESBAplication\ModeloCanonico\MC\MensagemRetorno.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://pucminas.br/mc/soa/cleberigor" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/mc/soa/cleberigor">
+  <xsd:complexType name="MensagemRetorno">
+    <xsd:sequence>
+      <xsd:element name="Codigo" type="xsd:integer"/>
+      <xsd:element name="descricao" type="xsd:string"/>
+      <xsd:element name="isAtivo" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Projetos\fontes\soa\ESBAplication\ModeloCanonico\MC\PucminasFault.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://pucminas.br/mc/soa/cleberigor" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/mc/soa/cleberigor">
+  <xsd:complexType name="PucminasFault">
+    <xsd:sequence>
+      <xsd:element name="Codigo" type="xsd:integer"/>
+      <xsd:element name="descricao" type="xsd:string"/>
+      <xsd:element name="detalhe" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://EST06001064:8088/mockCreditoServiceSOAP</con:endpoint><con:endpoint>http://pucminas.br/soa/credito</con:endpoint></con:endpoints><con:operation id="9465632f-dd79-42a4-9a1b-82a8ef85c2ec" isOneWay="false" action="verificaCreditoExterno" name="verificaCreditoExterno" bindingOperationName="verificaCreditoExterno" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="132e802e-4ed5-499f-8866-018e54a7a9f3" name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://EST06001064:8088/mockCreditoServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cleb="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:cleb1="http://pucminas.br/mc/soa/cleberigor">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cleb:parametrosVerificaCreditoExterno>\r
+         <cleb:pessoa>\r
+            <cleb1:id>?</cleb1:id>\r
+            <cleb1:nome>?</cleb1:nome>\r
+            <cleb1:dataNascimento>?</cleb1:dataNascimento>\r
+            <cleb1:cnpj>?</cleb1:cnpj>\r
+            <cleb1:telefone>?</cleb1:telefone>\r
+         </cleb:pessoa>\r
+      </cleb:parametrosVerificaCreditoExterno>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="verificaCreditoExterno"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b60d8624-6b28-4b61-9936-91af6ed1c2a8" isOneWay="false" action="" name="verificaCreditoInterno" bindingOperationName="verificaCreditoInterno" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="661937df-201a-4425-a73a-43f237f55a83" name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://EST06001064:8088/mockCreditoServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cleb="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:cleb1="http://pucminas.br/mc/soa/cleberigor">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cleb:parametrosVerificaCreditoInterno>\r
+         <cleb:pessoa>\r
+            <cleb1:id>?</cleb1:id>\r
+            <cleb1:nome>?</cleb1:nome>\r
+            <cleb1:dataNascimento>?</cleb1:dataNascimento>\r
+            <cleb1:cnpj>?</cleb1:cnpj>\r
+            <cleb1:telefone>?</cleb1:telefone>\r
+         </cleb:pessoa>\r
+      </cleb:parametrosVerificaCreditoInterno>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/sn/creditoservice/cleberigor/CreditoService/verificaCreditoInternoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fc7d066c-3b94-4acc-92ee-3765f3e1b650" isOneWay="false" action="" name="verificaWhiteList" bindingOperationName="verificaWhiteList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="62605237-0bdc-42aa-89c9-a56e8e3a902c" name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://EST06001064:8088/mockCreditoServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cleb="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:cleb1="http://pucminas.br/mc/soa/cleberigor">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cleb:parametrosVerificaWhiteList>\r
+         <cleb:pessoa>\r
+            <cleb1:id>?</cleb1:id>\r
+            <cleb1:nome>?</cleb1:nome>\r
+            <cleb1:dataNascimento>?</cleb1:dataNascimento>\r
+            <cleb1:cnpj>?</cleb1:cnpj>\r
+            <cleb1:telefone>?</cleb1:telefone>\r
+         </cleb:pessoa>\r
+      </cleb:parametrosVerificaWhiteList>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/sn/creditoservice/cleberigor/CreditoService/verificaWhiteListRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="b74c11df-3d2c-42f0-a49d-bece16d90df5" port="8088" path="/mockCreditoServiceSOAP" host="EST06001064" name="CreditoServiceSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="verificaCreditoExterno" id="9301b91e-3645-4108-b0b5-8f86bc211762" interface="CreditoServiceSOAP" operation="verificaCreditoExterno"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="6e2d7598-a5b5-4509-85b2-68501de2f047" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cleb="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:cleb1="http://pucminas.br/mc/soa/cleberigor">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cleb:resultadoVerificaCreditoExterno>
+         <cleb:credito>
+            <cleb1:pessoa>
+               <cleb1:id>1</cleb1:id>
+               <cleb1:nome>Teste</cleb1:nome>
+               <cleb1:dataNascimento>2014-10-26T21:32:52.12679</cleb1:dataNascimento>
+               <cleb1:cnpj>32.554.523/0001-76</cleb1:cnpj>
+               <cleb1:telefone>(31) 5555-5555</cleb1:telefone>
+            </cleb1:pessoa>
+            <cleb1:indicaCreditoExterno>true</cleb1:indicaCreditoExterno>
+            <cleb1:indicaCreditoInterno>false</cleb1:indicaCreditoInterno>
+            <cleb1:indicaWhiteList>false</cleb1:indicaWhiteList>
+            <cleb1:situacao>0</cleb1:situacao>
+         </cleb:credito>
+      </cleb:resultadoVerificaCreditoExterno>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="verificaCreditoExterno"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="verificaCreditoInterno" id="e55237df-902d-455b-aefc-ab9079bcbb5a" interface="CreditoServiceSOAP" operation="verificaCreditoInterno"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="9117abc9-97f0-4534-94fa-557339204e23" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cleb="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:cleb1="http://pucminas.br/mc/soa/cleberigor">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cleb:resultadoVerificaCreditoInterno>
+         <cleb:credito>
+            <cleb1:pessoa>
+               <cleb1:id>1</cleb1:id>
+               <cleb1:nome>Teste</cleb1:nome>
+               <cleb1:dataNascimento>2014-10-26T21:32:52.12679</cleb1:dataNascimento>
+               <cleb1:cnpj>32.554.523/0001-76</cleb1:cnpj>
+               <cleb1:telefone>(31) 5555-5555</cleb1:telefone>
+            </cleb1:pessoa>
+            <cleb1:indicaCreditoExterno>false</cleb1:indicaCreditoExterno>
+            <cleb1:indicaCreditoInterno>true</cleb1:indicaCreditoInterno>
+            <cleb1:indicaWhiteList>false</cleb1:indicaWhiteList>
+            <cleb1:situacao>0</cleb1:situacao>
+
+         </cleb:credito>
+      </cleb:resultadoVerificaCreditoInterno>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/sn/creditoservice/cleberigor/CreditoService/verificaCreditoInternoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="verificaWhiteList" id="3534c94c-4fe2-4e6c-a9d5-77ca8f207ae9" interface="CreditoServiceSOAP" operation="verificaWhiteList"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="3f3103fa-318f-4f97-a13b-a3137fed6107" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cleb="http://pucminas.br/sn/creditoservice/cleberigor" xmlns:cleb1="http://pucminas.br/mc/soa/cleberigor">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cleb:resultadoVerificaWhiteList>
+         <cleb:mensagemRetorno>
+            <cleb1:Codigo>0</cleb1:Codigo>
+            <cleb1:descricao>Teste</cleb1:descricao>
+            <cleb1:isAtivo>true</cleb1:isAtivo>
+         </cleb:mensagemRetorno>
+      </cleb:resultadoVerificaWhiteList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/sn/creditoservice/cleberigor/CreditoService/verificaWhiteListResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

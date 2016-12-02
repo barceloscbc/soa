@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cs="http://pucminas.br/sn/creditoservice/cleberigor"
+            xmlns:cim="http://pucminas.br/mc/soa/cleberigor"
+            targetNamespace="http://pucminas.br/sn/creditoservice/cleberigor" elementFormDefault="qualified">
+  <xsd:import schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd" namespace="http://pucminas.br/mc/soa/cleberigor"/>
+  <xsd:import schemaLocation="../../../ModeloCanonico/MC/Credito.xsd" namespace="http://pucminas.br/mc/soa/cleberigor"/>
+  <xsd:import schemaLocation="../../../ModeloCanonico/MC/MensagemRetorno.xsd"
+              namespace="http://pucminas.br/mc/soa/cleberigor"/>
+  <xsd:element name="parametrosVerificaCreditoInterno" >
+  <xsd:complexType >
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  
+  </xsd:element>
+    <xsd:element name="parametrosVerificaCreditoExterno" >
+  <xsd:complexType >
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  
+  </xsd:element>
+    <xsd:element name="parametrosVerificaWhiteList" >
+  <xsd:complexType >
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  
+  </xsd:element>
+  <xsd:element name="resultadoVerificaCreditoInterno">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="credito" type="cim:Credito"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoVerificaCreditoExterno">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="credito" type="cim:Credito"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoVerificaWhiteList">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="mensagemRetorno" type="cim:MensagemRetorno"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bf642a3e-85f1-4167-be2e-e36c37a89f7a" activeEnvironment="Default" name="PessoaService" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="4e9fd8a9-b47d-4270-97cd-61654e7c60bd" wsaVersion="NONE" name="PessoaServiceSOAP" type="wsdl" bindingName="{http://pucminas.br/sn/PessoaService/cleberigor}PessoaServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/Projetos/fontes/soa/ESBAplication/EBS/Pessoa/wsdl/PessoaService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Projetos/fontes/soa/ESBAplication/EBS/Pessoa/wsdl/PessoaService.wsdl"><con:part><con:url>file:/C:/Projetos/fontes/soa/ESBAplication/EBS/Pessoa/wsdl/PessoaService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PessoaService" targetNamespace="http://pucminas.br/sn/PessoaService/cleberigor" xmlns:tns="http://pucminas.br/sn/PessoaService/cleberigor" xmlns:inp1="http://pucminas.br/sn/Pessoa" xmlns:inp2="http://pucminas.br/mc/soa/cleberigor" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://pucminas.br/sn/Pessoa" schemaLocation="../xsd/ParametrosPessoa.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://pucminas.br/mc/soa/cleberigor" schemaLocation="../../../ModeloCanonico/MC/PucminasFault.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="buscaPessoaRequest">
+    <wsdl:part name="parameters" element="inp1:parametrosBuscaPessoa"/>
+  </wsdl:message>
+  <wsdl:message name="buscaPessoaResponse">
+    <wsdl:part name="parameters" element="inp1:resultadoBuscaPessoa"/>
+  </wsdl:message>
+  <wsdl:message name="pucminasFault">
+    <wsdl:part name="parameters" type="inp2:PucminasFault"/>
+  </wsdl:message>
+  <wsdl:message name="cadastraPessoaRequest">
+    <wsdl:part name="parameters" element="inp1:parametrosCadastraPessoa"/>
+  </wsdl:message>
+  <wsdl:message name="cadastraPessoaResponse">
+    <wsdl:part name="parameters" element="inp1:resultadoCadastraPessoa"/>
+  </wsdl:message>
+  <wsdl:message name="desastivaPessoaRequest">
+    <wsdl:part name="parameters" element="inp1:parametrosDesastivaPessoa"/>
+  </wsdl:message>
+  <wsdl:portType name="PessoaService">
+    <wsdl:operation name="buscaPessoa">
+      <wsdl:input message="tns:buscaPessoaRequest"/>
+      <wsdl:output message="tns:buscaPessoaResponse"/>
+      <wsdl:fault name="pucminasFault" message="tns:pucminasFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="cadastroPessoa">
+      <wsdl:input message="tns:cadastraPessoaRequest"/>
+      <wsdl:output message="tns:cadastraPessoaResponse"/>
+      <wsdl:fault message="tns:pucminasFault" name="pucminasFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="desastivaPessoa">
+      <wsdl:input message="tns:desastivaPessoaRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PessoaServiceSOAP" type="tns:PessoaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="buscaPessoa">
+      <soap:operation style="document" soapAction="buscaPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/PessoaService/cleberigor"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/PessoaService/cleberigor"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cadastroPessoa">
+      <soap:operation style="document" soapAction="cadastroPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/PessoaService/cleberigor"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://pucminas.br/sn/PessoaService/cleberigor"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="desastivaPessoa">
+      <soap:operation style="document" soapAction="http://pucminas.br/sn/PessoaService/cleberigor/desastivaPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PessoaService">
+    <wsdl:port name="PessoaServiceSOAP" binding="tns:PessoaServiceSOAP">
+      <soap:address location="http://pucminas.br/soa/pessoa"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Projetos\fontes\soa\ESBAplication\EBS\Pessoa\xsd\ParametrosPessoa.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://pucminas.br/sn/Pessoa" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/sn/Pessoa" xmlns:cim="http://pucminas.br/mc/soa/cleberigor">
+  <xsd:import schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd" namespace="http://pucminas.br/mc/soa/cleberigor"/>
+  <xsd:element name="parametrosBuscaPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoBuscaPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="parametrosCadastraPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoCadastraPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="parametrosDesastivaPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Projetos\fontes\soa\ESBAplication\ModeloCanonico\MC\Pessoa.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://pucminas.br/mc/soa/cleberigor" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/mc/soa/cleberigor">
+  <xsd:complexType name="Pessoa">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:integer"/>
+      <xsd:element name="nome" type="xsd:string"/>
+      <xsd:element name="dataNascimento" type="xsd:date"/>
+      <xsd:element name="cnpj" type="xsd:string"/>
+      <xsd:element name="telefone" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Projetos\fontes\soa\ESBAplication\ModeloCanonico\MC\PucminasFault.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://pucminas.br/mc/soa/cleberigor" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/mc/soa/cleberigor">
+  <xsd:complexType name="PucminasFault">
+    <xsd:sequence>
+      <xsd:element name="Codigo" type="xsd:integer"/>
+      <xsd:element name="descricao" type="xsd:string"/>
+      <xsd:element name="detalhe" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://EST06001064:8088/mockPessoaServiceSOAP</con:endpoint><con:endpoint>http://pucminas.br/soa/pessoa</con:endpoint></con:endpoints><con:operation id="8569e0e9-e861-4628-a0ed-279425dcd05f" isOneWay="false" action="buscaPessoa" name="buscaPessoa" bindingOperationName="buscaPessoa" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="748ae262-adfd-4b0b-96bb-dc919db3daf9" name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://EST06001064:8088/mockPessoaServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pes="http://pucminas.br/sn/Pessoa" xmlns:cleb="http://pucminas.br/mc/soa/cleberigor">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pes:parametrosBuscaPessoa>\r
+         <pes:pessoa>\r
+            <cleb:id>?</cleb:id>\r
+            <cleb:nome>?</cleb:nome>\r
+            <cleb:dataNascimento>?</cleb:dataNascimento>\r
+            <cleb:cnpj>?</cleb:cnpj>\r
+            <cleb:telefone>?</cleb:telefone>\r
+         </pes:pessoa>\r
+      </pes:parametrosBuscaPessoa>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="buscaPessoa"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="11ffb83b-98e0-4f36-b432-bc180ab7eb75" isOneWay="false" action="cadastroPessoa" name="cadastroPessoa" bindingOperationName="cadastroPessoa" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="39dc831b-4cc0-4e9a-a5fe-5486974ee835" name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://EST06001064:8088/mockPessoaServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pes="http://pucminas.br/sn/Pessoa" xmlns:cleb="http://pucminas.br/mc/soa/cleberigor">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pes:parametrosCadastraPessoa>\r
+         <pes:pessoa>\r
+            <cleb:id>?</cleb:id>\r
+            <cleb:nome>?</cleb:nome>\r
+            <cleb:dataNascimento>?</cleb:dataNascimento>\r
+            <cleb:cnpj>?</cleb:cnpj>\r
+            <cleb:telefone>?</cleb:telefone>\r
+         </pes:pessoa>\r
+      </pes:parametrosCadastraPessoa>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="cadastroPessoa"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="af6a994b-af1a-433c-8849-db07100c082b" isOneWay="false" action="http://pucminas.br/sn/PessoaService/cleberigor/desastivaPessoa" name="desastivaPessoa" bindingOperationName="desastivaPessoa" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3b26da35-e394-4120-9081-54caa7533c5f" name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://EST06001064:8088/mockPessoaServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pes="http://pucminas.br/sn/Pessoa" xmlns:cleb="http://pucminas.br/mc/soa/cleberigor">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pes:parametrosDesastivaPessoa>\r
+         <pes:pessoa>\r
+            <cleb:id>?</cleb:id>\r
+            <cleb:nome>?</cleb:nome>\r
+            <cleb:dataNascimento>?</cleb:dataNascimento>\r
+            <cleb:cnpj>?</cleb:cnpj>\r
+            <cleb:telefone>?</cleb:telefone>\r
+         </pes:pessoa>\r
+      </pes:parametrosDesastivaPessoa>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/sn/PessoaService/cleberigor/desastivaPessoa"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="ba7aba80-6ff4-4460-9128-7ea660465808" port="8088" path="/mockPessoaServiceSOAP" host="EST06001064" name="PessoaServiceSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="buscaPessoa" id="cab95df2-27e4-4cce-979f-4e12a284e27f" interface="PessoaServiceSOAP" operation="buscaPessoa"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="f543ea2a-63b7-4638-a99e-e22bc401c4c9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pes="http://pucminas.br/sn/Pessoa" xmlns:cleb="http://pucminas.br/mc/soa/cleberigor">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pes:resultadoBuscaPessoa>
+         <pes:pessoa>
+            <cleb:id>1</cleb:id>
+            <cleb:nome>Teste</cleb:nome>
+            <cleb:dataNascimento>2014-10-26T21:32:52.12679</cleb:dataNascimento>
+            <cleb:cnpj>32.554.523/0001-76</cleb:cnpj>
+            <cleb:telefone>(31) 5555-5555</cleb:telefone>
+         </pes:pessoa>
+      </pes:resultadoBuscaPessoa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="buscaPessoa"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="cadastroPessoa" id="039a1ed1-0b05-469a-a4f5-0b445fc05329" interface="PessoaServiceSOAP" operation="cadastroPessoa"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="6f7822c3-0bdb-4384-aef9-a0e175186b8d" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pes="http://pucminas.br/sn/Pessoa" xmlns:cleb="http://pucminas.br/mc/soa/cleberigor">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pes:resultadoCadastraPessoa>
+         <pes:pessoa>
+            <cleb:id>1</cleb:id>
+            <cleb:nome>Teste</cleb:nome>
+            <cleb:dataNascimento>2014-10-26T21:32:52.12679</cleb:dataNascimento>
+            <cleb:cnpj>32.554.523/0001-76</cleb:cnpj>
+            <cleb:telefone>(31) 5555-5555</cleb:telefone>
+         </pes:pessoa>
+      </pes:resultadoCadastraPessoa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="cadastroPessoa"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="desastivaPessoa" id="9db2136f-71b2-4991-a206-bf0d31703805" interface="PessoaServiceSOAP" operation="desastivaPessoa"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="774bd542-acb7-4357-bb32-861667beca0d" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/sn/PessoaService/cleberigor/desastivaPessoa"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="OVERRIDE">http://localhost:9090/pessoa</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/mc/soa/cleberigor"
+            targetNamespace="http://pucminas.br/mc/soa/cleberigor" elementFormDefault="qualified">
+  <xsd:include schemaLocation="Pessoa.xsd"/>
+  <xsd:complexType name="LotePessoa">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:integer"/>
+      <xsd:element name="pessoa" type="ci:Pessoa" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

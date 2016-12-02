@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="EBS/Credito/wsdl/CreditoService"/>
+            <con:binding>
+                <con:name>CreditoServiceSOAP</con:name>
+                <con:namespace>http://pucminas.br/sn/creditoservice/cleberigor</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f5721c2.5076d66f.0.158b1ebdd81.N7ff6">
+            <con:stage id="_StageId-N3f5721c2.5076d66f.0.158b1ebdd81.N7ff4" name="OperacaoInexistente">
+                <con:context/>
+                <con:actions>
+                    <con1:Error>
+                        <con2:id>_ActionId-N3f5721c2.5076d66f.0.158b1ebdd81.N7ff0</con2:id>
+                        <con1:errCode>201</con1:errCode>
+                        <con1:message>Erro ao acionar o serviço.</con1:message>
+                    </con1:Error>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f5721c2.5076d66f.0.158b1ebdd81.N7ff5">
+            <con:stage id="_StageId-N3f5721c2.5076d66f.0.158b1ebdd81.N7ff3" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f5721c2.5076d66f.0.158b1ebdd81.N7ff7" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="verificaCreditoInterno">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteToCreditLegacy">
+                                <con:context>
+                                    <con2:userNsDecl prefix="cleb" namespace="http://pucminas.br/sn/creditoservice/cleberigor"/>
+                                    <con2:userNsDecl prefix="cl" namespace="http://creditlegacy.com.br/SN/CreditLegacy"/>
+                                </con:context>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-N3f5721c2.5076d66f.0.158b1ebdd81.N7fed</con2:id>
+                                        <con3:service ref="ServicosNegocio/Credito/Services/Proxies/CreditLegacyProxyService" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ConsultarCreditLegacy</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con1:replace varName="body">
+                                                <con2:id>_ActionId-N3f5721c2.5076d66f.0.158b1ebdd81.N7fea</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>$body/cleb:parametrosVerificaCreditoInterno</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryTransform>
+                                                        <con2:resource ref="ServicosNegocio/Credito/Resources/Transformations/verificaCreditoInternoToCreditLegacy"/>
+                                                        <con2:param name="parametro">
+                                                            <con2:path>$body/cleb:parametrosVerificaCreditoInterno</con2:path>
+                                                        </con2:param>
+                                                    </con2:xqueryTransform>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con1:replace varName="body">
+                                                <con2:id>_ActionId-N3f5721c2.5076d66f.0.158b1ebdd81.N7f3a</con2:id>
+                                                <con1:location>
+                                                    <con2:xpathText>$body/cl:ResultadoCreditLegacy</con2:xpathText>
+                                                </con1:location>
+                                                <con1:expr>
+                                                    <con2:xqueryTransform>
+                                                        <con2:resource ref="ServicosNegocio/Credito/Resources/Transformations/CreditLegacyResponseToVerificaCreditoInternoResponse"/>
+                                                        <con2:param name="parametro">
+                                                            <con2:path>$body/cl:ResultadoCreditLegacy</con2:path>
+                                                        </con2:param>
+                                                    </con2:xqueryTransform>
+                                                </con1:expr>
+                                            </con1:replace>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairOperacaoInexistente">
+                                <con:request>request-N3f5721c2.5076d66f.0.158b1ebdd81.N7ff6</con:request>
+                                <con:response>response-N3f5721c2.5076d66f.0.158b1ebdd81.N7ff5</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

@@ -1,0 +1,6 @@
+<view_states>
+   <function arity="1" name="func">
+      <source_tree_view last.visible.row="2" last.visible.path="/sourceRoot[[0]]/ResultadoWhiteList[[0]]/indica_white_list[[1]]" first.visible.path="/sourceRoot[[0]]/ResultadoWhiteList[[0]]" expanded.paths="/sourceRoot[[0]]/ResultadoWhiteList[[0]]" first.visible.row="0" selected.paths="/sourceRoot[[0]]/ResultadoWhiteList[[0]]/indica_white_list[[1]]"/>
+      <target_tree_view last.visible.row="4" last.visible.path="/TargetRoot[[0]]/resultadoVerificaWhiteList[[0]]/mensagemRetorno[[0]]/isAtivo[[2]]" first.visible.path="/TargetRoot[[0]]/resultadoVerificaWhiteList[[0]]" expanded.paths="/TargetRoot[[0]]/resultadoVerificaWhiteList[[0]]&#xA;/TargetRoot[[0]]/resultadoVerificaWhiteList[[0]]/mensagemRetorno[[0]]" first.visible.row="0" selected.paths="/TargetRoot[[0]]/resultadoVerificaWhiteList[[0]]/mensagemRetorno[[0]]/isAtivo[[2]]"/>
+   </function>
+</view_states>

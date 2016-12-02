@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ci="http://pucminas.br/sn/Pessoa"
+            xmlns:cim="http://pucminas.br/mc/soa/cleberigor" targetNamespace="http://pucminas.br/sn/Pessoa"
+            elementFormDefault="qualified">
+  <xsd:import schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd" namespace="http://pucminas.br/mc/soa/cleberigor"/>
+  <xsd:element name="parametrosBuscaPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoBuscaPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="parametrosCadastraPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="resultadoCadastraPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="parametrosDesastivaPessoa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
