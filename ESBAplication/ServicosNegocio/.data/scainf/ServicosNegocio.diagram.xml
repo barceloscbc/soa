@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
     <dgm:gService name="CreditLegacyProxyService">
-        <dgm:body borderWidth="2" arcRad="20" X="21" Y="469" width="137" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="728" width="137" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="11" Y="462" width="156" height="68">
+        <dgm:shadow arcRad="20" X="11" Y="721" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:outputPort name="CreditLegacyProxyService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
         <dgm:operations/>
     </dgm:gService>
-    <dgm:gService name="InternalWhiteListProxyService">
-        <dgm:body borderWidth="2" arcRad="20" X="21" Y="383" width="137" height="54">
+    <dgm:gService name="CreditoGeralProxyService">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="539" width="137" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="11" Y="376" width="156" height="68">
+        <dgm:shadow arcRad="20" X="11" Y="532" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="CreditoGeralProxyService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="7" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gService>
+    <dgm:gService name="InternalWhiteListProxyService">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="381" width="137" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="374" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:outputPort name="InternalWhiteListProxyService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -25,11 +37,11 @@
         <dgm:operations/>
     </dgm:gService>
     <dgm:gService name="VerificaCreditoExternoProxyService">
-        <dgm:body borderWidth="2" arcRad="20" X="21" Y="296" width="137" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="295" width="137" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="11" Y="289" width="156" height="68">
+        <dgm:shadow arcRad="20" X="11" Y="288" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:outputPort name="VerificaCreditoExternoProxyService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -73,11 +85,11 @@
         <dgm:operations/>
     </dgm:gService>
     <dgm:gReference name="CreditLegacyBusinessService">
-        <dgm:body borderWidth="2" arcRad="20" X="521" Y="469" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="728" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="511" Y="462" width="156" height="68">
+        <dgm:shadow arcRad="20" X="1028" Y="721" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="CreditLegacyBusinessService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -85,11 +97,11 @@
         <dgm:operations/>
     </dgm:gReference>
     <dgm:gReference name="InternalWhiteListBusinessService">
-        <dgm:body borderWidth="2" arcRad="20" X="521" Y="383" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="380" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="511" Y="376" width="156" height="68">
+        <dgm:shadow arcRad="20" X="1028" Y="373" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="InternalWhiteListBusinessService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -97,23 +109,59 @@
         <dgm:operations/>
     </dgm:gReference>
     <dgm:gReference name="SerasaBusinessService">
-        <dgm:body borderWidth="2" arcRad="20" X="521" Y="26" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="26" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="511" Y="19" width="156" height="68">
+        <dgm:shadow arcRad="20" X="1028" Y="19" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="SerasaBusinessService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
         <dgm:operations/>
     </dgm:gReference>
-    <dgm:gReference name="SerasaProxyService2">
-        <dgm:body borderWidth="2" arcRad="20" X="521" Y="297" width="136" height="54">
+    <dgm:gReference name="VerificaWhiteListProxyService2">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="466" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="511" Y="290" width="156" height="68">
+        <dgm:shadow arcRad="20" X="1028" Y="459" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="VerificaWhiteListProxyService2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="VerificaCreditoExternoProxyService2">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="554" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1028" Y="547" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="VerificaCreditoExternoProxyService2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="VerificaCreditoInternoProxyService2">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="642" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1028" Y="635" width="156" height="68">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="VerificaCreditoInternoProxyService2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
+        <dgm:operations/>
+    </dgm:gReference>
+    <dgm:gReference name="SerasaProxyService2">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="294" width="136" height="54">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="1028" Y="287" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="SerasaProxyService2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -121,11 +169,11 @@
         <dgm:operations/>
     </dgm:gReference>
     <dgm:gReference name="CreditLegacyProxyService2">
-        <dgm:body borderWidth="2" arcRad="20" X="521" Y="205" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="205" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="511" Y="198" width="156" height="68">
+        <dgm:shadow arcRad="20" X="1028" Y="198" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="CreditLegacyProxyService2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -133,24 +181,39 @@
         <dgm:operations/>
     </dgm:gReference>
     <dgm:gReference name="InternalWhiteListProxyService2">
-        <dgm:body borderWidth="2" arcRad="20" X="521" Y="112" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="1038" Y="112" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="511" Y="105" width="156" height="68">
+        <dgm:shadow arcRad="20" X="1028" Y="105" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="InternalWhiteListProxyService2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_transport_http_20x20.png" X="14" Y="4" width="20" height="20"/>
         <dgm:operations/>
     </dgm:gReference>
-    <dgm:gComponent name="VerificaCreditoExternoPipeline">
-        <dgm:body borderWidth="2" arcRad="20" X="274" Y="283" width="130" height="61">
+    <dgm:gComponent name="CreditoGeralPipeline">
+        <dgm:body borderWidth="2" arcRad="20" X="748" Y="524" width="130" height="111">
             <dgm:borderColor r="109" g="136" b="65"/>
             <dgm:lightBgColor r="201" g="224" b="155"/>
             <dgm:darkBgColor r="157" g="195" b="93"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="264" Y="276" width="150" height="77">
+        <dgm:shadow arcRad="20" X="738" Y="517" width="150" height="127">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="proxyservice.-1443957938.VerificaWhiteListProxyService" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="proxyservice.-1443957938.VerificaCreditoExternoProxyService" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="proxyservice.-1443957938.VerificaCreditoInternoProxyService" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="VerificaCreditoExternoPipeline">
+        <dgm:body borderWidth="2" arcRad="20" X="458" Y="283" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="448" Y="276" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -158,12 +221,12 @@
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="VerificaCreditoInternoPipeline">
-        <dgm:body borderWidth="2" arcRad="20" X="274" Y="190" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="458" Y="190" width="130" height="61">
             <dgm:borderColor r="109" g="136" b="65"/>
             <dgm:lightBgColor r="201" g="224" b="155"/>
             <dgm:darkBgColor r="157" g="195" b="93"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="264" Y="183" width="150" height="77">
+        <dgm:shadow arcRad="20" X="448" Y="183" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -171,12 +234,12 @@
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="VerificaWhiteListPipeline">
-        <dgm:body borderWidth="2" arcRad="20" X="274" Y="97" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="458" Y="97" width="130" height="61">
             <dgm:borderColor r="109" g="136" b="65"/>
             <dgm:lightBgColor r="201" g="224" b="155"/>
             <dgm:darkBgColor r="157" g="195" b="93"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="264" Y="90" width="150" height="77">
+        <dgm:shadow arcRad="20" X="448" Y="90" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -184,51 +247,79 @@
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="CreditLegacyProxyService" target="CreditLegacyBusinessService" width="2">
-        <dgm:gSegment X1="168" Y1="479" X2="511" Y2="479"/>
+        <dgm:gSegment X1="168" Y1="738" X2="1028" Y2="738"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreditoGeralProxyService" target="CreditoGeralPipeline/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="549" X2="738" Y2="549"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="InternalWhiteListProxyService" target="InternalWhiteListBusinessService" width="2">
-        <dgm:gSegment X1="168" Y1="393" X2="511" Y2="393"/>
+        <dgm:gSegment X1="168" Y1="391" X2="912" Y2="391"/>
+        <dgm:gSegment X1="912" Y1="391" X2="912" Y2="390"/>
+        <dgm:gSegment X1="912" Y1="390" X2="1028" Y2="390"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="VerificaCreditoExternoProxyService" target="VerificaCreditoExternoPipeline/__service__" width="2">
-        <dgm:gSegment X1="168" Y1="306" X2="240" Y2="306"/>
-        <dgm:gSegment X1="240" Y1="306" X2="240" Y2="308"/>
-        <dgm:gSegment X1="240" Y1="308" X2="264" Y2="308"/>
+        <dgm:gSegment X1="168" Y1="305" X2="332" Y2="305"/>
+        <dgm:gSegment X1="332" Y1="305" X2="332" Y2="308"/>
+        <dgm:gSegment X1="332" Y1="308" X2="448" Y2="308"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="VerificaCreditoInternoProxyService" target="VerificaCreditoInternoPipeline/__service__" width="2">
-        <dgm:gSegment X1="168" Y1="215" X2="264" Y2="215"/>
+        <dgm:gSegment X1="168" Y1="215" X2="448" Y2="215"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="VerificaWhiteListProxyService" target="VerificaWhiteListPipeline/__service__" width="2">
-        <dgm:gSegment X1="168" Y1="122" X2="264" Y2="122"/>
+        <dgm:gSegment X1="168" Y1="122" X2="448" Y2="122"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="SerasaProxyService" target="SerasaBusinessService" width="2">
-        <dgm:gSegment X1="168" Y1="36" X2="511" Y2="36"/>
+        <dgm:gSegment X1="168" Y1="36" X2="1028" Y2="36"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreditoGeralPipeline/proxyservice.-1443957938.VerificaWhiteListProxyService" target="VerificaWhiteListProxyService2" width="2">
+        <dgm:gSegment X1="888" Y1="549" X2="912" Y2="549"/>
+        <dgm:gSegment X1="912" Y1="549" X2="912" Y2="476"/>
+        <dgm:gSegment X1="912" Y1="476" X2="1028" Y2="476"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreditoGeralPipeline/proxyservice.-1443957938.VerificaCreditoExternoProxyService" target="VerificaCreditoExternoProxyService2" width="2">
+        <dgm:gSegment X1="888" Y1="574" X2="927" Y2="574"/>
+        <dgm:gSegment X1="927" Y1="574" X2="927" Y2="564"/>
+        <dgm:gSegment X1="927" Y1="564" X2="1028" Y2="564"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="CreditoGeralPipeline/proxyservice.-1443957938.VerificaCreditoInternoProxyService" target="VerificaCreditoInternoProxyService2" width="2">
+        <dgm:gSegment X1="888" Y1="599" X2="912" Y2="599"/>
+        <dgm:gSegment X1="912" Y1="599" X2="912" Y2="652"/>
+        <dgm:gSegment X1="912" Y1="652" X2="1028" Y2="652"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="VerificaCreditoExternoPipeline/proxyservice.-2118518771.SerasaProxyService" target="SerasaProxyService2" width="2">
-        <dgm:gSegment X1="414" Y1="308" X2="487" Y2="308"/>
-        <dgm:gSegment X1="487" Y1="308" X2="487" Y2="307"/>
-        <dgm:gSegment X1="487" Y1="307" X2="511" Y2="307"/>
+        <dgm:gSegment X1="598" Y1="308" X2="912" Y2="308"/>
+        <dgm:gSegment X1="912" Y1="308" X2="912" Y2="304"/>
+        <dgm:gSegment X1="912" Y1="304" X2="1028" Y2="304"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="VerificaCreditoInternoPipeline/proxyservice.-2118518771.CreditLegacyProxyService" target="CreditLegacyProxyService2" width="2">
-        <dgm:gSegment X1="414" Y1="215" X2="511" Y2="215"/>
+        <dgm:gSegment X1="598" Y1="215" X2="1028" Y2="215"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="VerificaWhiteListPipeline/proxyservice.-2118518771.InternalWhiteListProxyService" target="InternalWhiteListProxyService2" width="2">
-        <dgm:gSegment X1="414" Y1="122" X2="511" Y2="122"/>
+        <dgm:gSegment X1="598" Y1="122" X2="1028" Y2="122"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

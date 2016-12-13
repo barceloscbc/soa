@@ -1,6 +1,6 @@
 <view_states>
    <function arity="1" name="func">
-      <source_tree_view last.visible.row="2" last.visible.path="/sourceRoot[[0]]/ResultadoSerasa[[0]]/valor_restricao[[1]]" first.visible.path="/sourceRoot[[0]]/ResultadoSerasa[[0]]" expanded.paths="/sourceRoot[[0]]/ResultadoSerasa[[0]]" first.visible.row="0" selected.paths=""/>
-      <target_tree_view last.visible.row="11" last.visible.path="/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]/credito[[0]]/situacao[[4]]" first.visible.path="/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]" expanded.paths="/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]&#xA;/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]/credito[[0]]&#xA;/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]/credito[[0]]/pessoa[[0]]" first.visible.row="0" selected.paths=""/>
+      <source_tree_view last.visible.row="2" last.visible.path="/sourceRoot[[0]]/ResultadoSerasa[[0]]/valor_restricao[[1]]" first.visible.path="/sourceRoot[[0]]/ResultadoSerasa[[0]]" expanded.paths="/sourceRoot[[0]]/ResultadoSerasa[[0]]" first.visible.row="0" selected.paths="/sourceRoot[[0]]/ResultadoSerasa[[0]]/valor_restricao[[1]]"/>
+      <target_tree_view last.visible.row="12" last.visible.path="/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]/credito[[0]]/score[[5]]" first.visible.path="/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]" expanded.paths="/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]&#xA;/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]/credito[[0]]&#xA;/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]/credito[[0]]/pessoa[[0]]" first.visible.row="0" selected.paths="/TargetRoot[[0]]/resultadoVerificaCreditoExterno[[0]]/credito[[0]]/score[[5]]"/>
    </function>
 </view_states>

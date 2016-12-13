@@ -30,12 +30,14 @@
   <wsdl:message name="desastivaPessoaRequest">
     <wsdl:part name="parameters" element="inp1:parametrosDesastivaPessoa"/>
   </wsdl:message>
+  
   <wsdl:portType name="PessoaService">
     <wsdl:operation name="buscaPessoa">
       <wsdl:input message="tns:buscaPessoaRequest"/>
       <wsdl:output message="tns:buscaPessoaResponse"/>
       <wsdl:fault name="pucminasFault" message="tns:pucminasFault"/>
     </wsdl:operation>
+    
     <wsdl:operation name="cadastroPessoa">
       <wsdl:input message="tns:cadastraPessoaRequest"/>
       <wsdl:output message="tns:cadastraPessoaResponse"/>
@@ -45,6 +47,7 @@
       <wsdl:input message="tns:desastivaPessoaRequest"/>
     </wsdl:operation>
   </wsdl:portType>
+  
   <wsdl:binding name="PessoaServiceSOAP" type="tns:PessoaService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
     <wsdl:operation name="buscaPessoa">

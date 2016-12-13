@@ -21,10 +21,11 @@ declare function local:func($parametro as element() (:: schema-element(ns1:Resul
                 <cle:cpf>{fn:data($parametro/ns1:num_documento)}</cle:cpf>
                 <cle:telefone></cle:telefone>
             </cle:pessoa>
-            <cle:indicaCreditoExterno></cle:indicaCreditoExterno>
-            <cle:indicaCreditoInterno></cle:indicaCreditoInterno>
-            <cle:indicaWhiteList></cle:indicaWhiteList>
+            <cle:indicaCreditoExterno >{fn:true()}</cle:indicaCreditoExterno>
+            <cle:indicaCreditoInterno>{fn:false()}</cle:indicaCreditoInterno>
+            <cle:indicaWhiteList>{fn:false()}</cle:indicaWhiteList>
             <cle:situacao></cle:situacao>
+            <cle:score>{fn:data($parametro/ns1:valor_restricao)}</cle:score>
         </ns2:credito>
     </ns2:resultadoVerificaCreditoExterno>
 };

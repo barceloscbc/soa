@@ -6,6 +6,15 @@
   <xsd:import schemaLocation="../../../ModeloCanonico/MC/Credito.xsd" namespace="http://pucminas.br/mc/soa/cleberigor"/>
   <xsd:import schemaLocation="../../../ModeloCanonico/MC/MensagemRetorno.xsd"
               namespace="http://pucminas.br/mc/soa/cleberigor"/>
+ <xsd:element name="parametrosVerificaCreditoGeral" >
+  <xsd:complexType >
+      <xsd:sequence>
+        <xsd:element name="pessoa" type="cim:Pessoa"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  
+  </xsd:element>
+ 
   <xsd:element name="parametrosVerificaCreditoInterno" >
   <xsd:complexType >
       <xsd:sequence>
@@ -30,6 +39,14 @@
     </xsd:complexType>
   
   </xsd:element>
+    <xsd:element name="resultadoVerificaCreditoGeral">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="credito" type="cim:Credito"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
   <xsd:element name="resultadoVerificaCreditoInterno">
     <xsd:complexType>
       <xsd:sequence>

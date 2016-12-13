@@ -10,7 +10,8 @@
         <xsd:element name="indicaCreditoInterno" type="xsd:boolean"/>
         <xsd:element name="indicaWhiteList" type="xsd:boolean"/>
         <xsd:element name="situacao" type="xsd:integer"/>
-      </xsd:sequence>
+      <xsd:element name="score" type="xsd:double"/>
+    </xsd:sequence>
     </xsd:complexType>
   
 </xsd:schema>
