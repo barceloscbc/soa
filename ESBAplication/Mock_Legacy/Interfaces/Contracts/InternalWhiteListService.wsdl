@@ -15,7 +15,7 @@
 	</wsdl:message>
 
 	<wsdl:message name="InternalWhiteListResponse">
-		<wsdl:part element="ser:ParametrosWhiteList" name="ResultadoInternalWhiteList" />
+		<wsdl:part element="ser:ResultadoWhiteList" name="ResultadoInternalWhiteList" />
 	</wsdl:message>
 
 	<wsdl:portType name="InternalWhiteListService">

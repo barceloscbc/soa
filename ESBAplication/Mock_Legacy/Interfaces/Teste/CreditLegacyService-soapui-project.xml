@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="0c68701b-aaaa-4ea7-bc17-3eab60ba2b89" activeEnvironment="Default" name="CreditLegacyService" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9706a85d-2943-4bfe-99de-23d4ed432b99" wsaVersion="NONE" name="CreditLegacyServiceSOAP" type="wsdl" bindingName="{http://cursosoa.org/CreditLegacyService/}CreditLegacyServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/Projetos/fontes/soa/ESBAplication/Mock_Legacy/Interfaces/Contracts/CreditLegacyService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Projetos/fontes/soa/ESBAplication/Mock_Legacy/Interfaces/Contracts/CreditLegacyService.wsdl"><con:part><con:url>file:/C:/Projetos/fontes/soa/ESBAplication/Mock_Legacy/Interfaces/Contracts/CreditLegacyService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CreditLegacyService" targetNamespace="http://cursosoa.org/CreditLegacyService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tn="http://cursosoa.org/CreditLegacyService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://creditlegacy.com.br/SN/CreditLegacy">
+<con:soapui-project id="0c68701b-aaaa-4ea7-bc17-3eab60ba2b89" activeEnvironment="Default" name="CreditLegacyService" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9706a85d-2943-4bfe-99de-23d4ed432b99" wsaVersion="NONE" name="CreditLegacyServiceSOAP" type="wsdl" bindingName="{http://cursosoa.org/CreditLegacyService/}CreditLegacyServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/Projetos/fontes/soa/ESBAplication/Mock_Legacy/Interfaces/Contracts/CreditLegacyService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Projetos/fontes/soa/ESBAplication/Mock_Legacy/Interfaces/Contracts/CreditLegacyService.wsdl"><con:part><con:url>file:/C:/Projetos/fontes/soa/ESBAplication/Mock_Legacy/Interfaces/Contracts/CreditLegacyService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CreditLegacyService" targetNamespace="http://cursosoa.org/CreditLegacyService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tn="http://cursosoa.org/CreditLegacyService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://creditlegacy.com.br/SN/CreditLegacy">
   <wsdl:types>
     <xsd:schema targetNamespace="http://creditlegacy.com.br/CreditLegacy">
       <xsd:import namespace="http://creditlegacy.com.br/SN/CreditLegacy" schemaLocation="../Schemas/CreditLegacy.xsd"/>
@@ -87,7 +87,63 @@
             <!--1 or more repetitions:-->
             <cred:restricao>
                <cred:ds_restricao>nehuma</cred:ds_restricao>
-               <cred:valor>2.500,00</cred:valor>
+               <cred:valor>2500.00</cred:valor>
+            </cred:restricao>
+            <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>2500.00</cred:valor>
+            </cred:restricao>
+            <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>2500.00</cred:valor>
+            </cred:restricao>
+         </cred:restricoes>
+      </cred:ResultadoCreditLegacy>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/CreditLegacyService/CreditLegacyService"/></con:response><con:response name="Response 2" id="5e714828-15f2-4a9b-98ce-db150bdbbda2" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cred="http://creditlegacy.com.br/SN/CreditLegacy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cred:ResultadoCreditLegacy>
+         <cred:cpf>423.607.377-32</cred:cpf>
+         <cred:restricoes>
+            <!--1 or more repetitions:-->
+            <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>100.0</cred:valor>
+            </cred:restricao>
+            <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>50.0</cred:valor>
+            </cred:restricao>
+            <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>25.0</cred:valor>
+            </cred:restricao>
+             <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>25.0</cred:valor>
+            </cred:restricao>
+         </cred:restricoes>
+      </cred:ResultadoCreditLegacy>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/CreditLegacyService/CreditLegacyService"/></con:response><con:response name="Response 3" id="39625c72-e532-4add-a5bd-a56f2e95345b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cred="http://creditlegacy.com.br/SN/CreditLegacy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cred:ResultadoCreditLegacy>
+         <cred:cpf>423.607.377-32</cred:cpf>
+         <cred:restricoes>
+            <!--1 or more repetitions:-->
+            <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>10.00</cred:valor>
+            </cred:restricao>
+            <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>20.00</cred:valor>
+            </cred:restricao>
+            <cred:restricao>
+               <cred:ds_restricao>nehuma</cred:ds_restricao>
+               <cred:valor>30.00</cred:valor>
             </cred:restricao>
          </cred:restricoes>
       </cred:ResultadoCreditLegacy>
